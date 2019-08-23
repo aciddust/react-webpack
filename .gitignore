@@ -1,3 +1,4 @@
+./yarn_lock
 node_modules/
 yarn_lock
 .DS_Store
