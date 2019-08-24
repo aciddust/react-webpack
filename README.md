@@ -5,5 +5,6 @@
 2. `yarn {start | debug}` 혹은 `npm {start | debug}`
 3. **Enjoy**.
 
-## 구성 방법.
-아래의 링크 참조.  
+## 어떻게 만들었죠?
+[링크 참조 : React with Webpack4](https://aciddust.github.io/blog/post/React-with-Webpack4/) 
+
