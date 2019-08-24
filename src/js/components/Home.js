@@ -5,9 +5,10 @@ const Home = () => {
     <Layout>
       <h2>Page: Home</h2>
       <p>
-        <Link to="/dynamic">/dynamic 으로 이동하는 링크</Link>
+        <Link to="/fragment">/fragment 으로 이동하는 링크</Link>
       </p>
     </Layout>
+    
   );
 };
 export default Home;
