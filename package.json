@@ -29,7 +29,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "scripts": {
-    "debug": "webpack-dev-server",
-    "start": "webpack"
+    "start": "webpack-dev-server",
+    "build": "webpack"
   }
 }
