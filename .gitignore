@@ -27,3 +27,6 @@ yarn_lock
 .npmrc
 /npm/dist
 /npm/path.txt
+firebase-debug.log
+.firebaserc
+.firebase/*
