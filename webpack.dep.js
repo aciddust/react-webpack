@@ -3,12 +3,11 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //css파일 별도 추출을 위한 플러그인.
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const port = process.env.PORT || 8080;
 
 module.exports = {
   // {'development' | 'production'}
   // 개발지향모드 | 배포지향모드
-  mode:'development',
+  mode:'production',
   // 번들링 시작지점.
   entry: ['@babel/polyfill', './src/js/index.js', './src/sass/main.scss'],
   output:{
@@ -45,6 +44,7 @@ module.exports = {
       template: 'public/index.html',
       // favicon: 'public/favicon.ico' 없어서 주석처리함
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       // 명시된 모듈들을 알아서 불러와주는 역할을 함.
       // 이 경우에는 react 모듈을 불러오게 하였음.
@@ -55,10 +55,4 @@ module.exports = {
       filename: 'css/style.css'
     })
   ],
-  devServer: {
-    host: 'localhost', // 호스트 주소
-    port: port, // 포트번호
-    open: true, // 브라우저 자동 열기
-    historyApiFallback: true // 브라우저의 URL 변경을 허용할지 여부
-  }
 };
