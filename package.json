@@ -30,6 +30,6 @@
   },
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "mv dist dist_old && webpack --config webpack.dep.js"
+    "build": "rm -rf dist_old && mv dist dist_old && webpack --config webpack.dep.js"
   }
 }
