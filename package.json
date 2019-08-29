@@ -30,6 +30,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "rm -rf dist_old && mv dist dist_old && webpack --config webpack.dep.js"
+    "build": "webpack --config webpack.dep.js",
+    "fbinit": "firebase init && firebase use --add",
+    "fbdeploy": "yarn build && firebase deploy"
+
   }
 }
