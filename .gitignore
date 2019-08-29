@@ -21,6 +21,7 @@ yarn_lock
 /.idea/
 /build/
 /dist/
+/dist_old/
 /external_binaries/
 /out/
 .npmrc
