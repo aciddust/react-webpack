@@ -29,4 +29,6 @@ yarn_lock
 /npm/path.txt
 firebase-debug.log
 .firebaserc
+firebase.json
+database.rules.json
 .firebase/*
