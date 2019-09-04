@@ -30,5 +30,7 @@ yarn_lock
 firebase-debug.log
 .firebaserc
 firebase.json
-database.rules.json
+firestore.indexes.json
+firestore.rules
+database.rules.jsoin
 .firebase/*
