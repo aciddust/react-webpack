@@ -32,5 +32,5 @@ firebase-debug.log
 firebase.json
 firestore.indexes.json
 firestore.rules
-database.rules.jsoin
+database.rules.json
 .firebase/*
