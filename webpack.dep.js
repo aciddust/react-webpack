@@ -32,7 +32,15 @@ module.exports = {
           "sass-loader?outputStyle=expanded&indentedSyntax"
           // loader: 'sass-loader?outputStyle=compressed'
         ]
-      }
+      },
+      { // 3
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        exclude:/node_modules/,
+        use:[
+          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack-loader?bypassOnDebug'
+        ]
+      },  
     ]
   },
   // 번들링중 오류 발생지점을 trace 해서 알려줌.
