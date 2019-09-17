@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import Layout from './Layout';
+import youtube from '../../img/youtube.png';
+
 const Home = () => {
   return (
     <Layout>
@@ -7,6 +9,7 @@ const Home = () => {
       <p>
         <Link to="/fragment">/fragment 으로 이동하는 링크</Link>
       </p>
+      <img src={youtube} alt="youtube"/>
     </Layout>
     
   );
