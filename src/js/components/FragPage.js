@@ -25,6 +25,25 @@ class FragPage extends Component{
       information: information.concat({id: this.id++, ...data})
     })
   }
+
+  handleRemove = (id) => {
+    const { information } = this.state;
+    this.setState({
+      information: information.filter(info => info.id !== id)
+    })
+  }
+
+  handleUpdate = (id, data) => {
+    const { information } = this.state;
+    this.setState({
+      information: information.map(
+        info => id === info.id
+        ? { ...info, ...data } // 새 객체 만들어서 기존의 값과 전달받은 data덮어씀
+        : info // 기존 값 그대로 유지
+      )
+    })
+  }
+
   render() {
     return(
       <Layout>
@@ -33,7 +52,11 @@ class FragPage extends Component{
         <PhoneForm
           onCreate={this.handleCreate}
         />
-        <PhoneInfoList data={this.state.information}/>
+        <PhoneInfoList
+          data={this.state.information}
+          onRemove={this.handleRemove}
+          onUpdate={this.handleUpdate}
+        />
       </Layout>
     );
   }
