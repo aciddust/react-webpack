@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Layout from './Layout';
-import PhoneForm from './PhoneForm';
-import PhoneInfoList from './PhoneInfoList';
+import PhoneForm from './phonebook/PhoneForm';
+import PhoneInfoList from './phonebook/PhoneInfoList';
 
 class FragPage extends Component{
   id = 2
@@ -17,8 +17,15 @@ class FragPage extends Component{
         name: 'World',
         phone: '010-0000-5678'
       }
-    ]
+    ],
+    keyword: ''
   }
+  handleChange = (e) => {
+    this.setState({
+      keyword: e.target.value,
+    });
+  }
+
   handleCreate = (data) => {
     const { information } = this.state;
     this.setState({
@@ -43,8 +50,11 @@ class FragPage extends Component{
       )
     })
   }
-
   render() {
+    const { information, keyword } = this.state;
+    const filteredList = information.filter(
+      info => info.name.indexOf(keyword) !== -1
+    );
     return(
       <Layout>
         <h2>Page: Fragment</h2>
@@ -52,8 +62,16 @@ class FragPage extends Component{
         <PhoneForm
           onCreate={this.handleCreate}
         />
+        <p>
+          <input
+            placeholder="검색 할 이름을 입력하세요.."
+            onChange={this.handleChange}
+            value={keyword}
+          />
+        </p>
+        <hr />
         <PhoneInfoList
-          data={this.state.information}
+          data={filteredList}
           onRemove={this.handleRemove}
           onUpdate={this.handleUpdate}
         />
